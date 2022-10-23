@@ -1,5 +1,7 @@
-import React from 'react';
+import { React, Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from "../actions";
 import Header from './Header';
 
 const Landing = () => {
@@ -32,19 +34,26 @@ const CommentBox = () => {
   )
 }
 
-const App = () => {
-  return  (
-    <div>
-      <BrowserRouter>
-        <div>
-          <Route exact path="/" component={Header} />
-          <Route exact path="/" component={Landing} />
-          <Route path="/about" component={About} />
-          <Route path="/projects" component={Projects} />
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    // Send an AJAX request with axios (our fetchUser action) on load
+    this.props.fetchUser();
+  }
+
+  render() {
+    return  (
+      <div>
+        <BrowserRouter>
+          <div>
+            <Route exact path="/" component={Header} />
+            <Route exact path="/" component={Landing} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
+          </div>
+        </BrowserRouter>
+      </div>
+    );
+  }
 };
 
-export default App;
+export default connect(null, actions)(App);

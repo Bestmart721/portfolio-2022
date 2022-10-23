@@ -1,23 +1,26 @@
 const passport = require('passport');
 
 module.exports = (app) => {
-  app.get(
+  app.get( // Hook into Passport JS middlewar on /auth/google (log in attempt)
     '/auth/google',
-    passport.authenticate('google', {
+    passport.authenticate('google', { // Redirects us to google OAuth
       scope: ['profile', 'email']
     })
   );
 
-  app.get(
-    '/auth/google/callback',
-    passport.authenticate('google')
+  app.get( // Hook into Passport JS middlewar on /auth/google/callback
+    '/auth/google/callback', //                         (after log in)
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/'); // Send us back to landing page
+    }
   );
 
   app.get(
     '/api/logout',
     (req, res) => {
       req.logout();
-      res.send(req.user);
+      res.redirect('/'); // Send us back to landing pages
     }
   );
 
