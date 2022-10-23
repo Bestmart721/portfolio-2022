@@ -31,19 +31,19 @@ class App extends Component {
   buildPanes() {
     return (
       <Fragment>
-        {this.paneMatch(
+        { this.paneMatch(
           this.props.pane.current,
           "landing",
           "about") ?
-          <AboutPane/> : null}
-        {this.paneMatch(
+          <AboutPane/> : null }
+        { this.paneMatch(
           this.props.pane.current,
           "landing",
           "about",
           "projects") ?
-          <LandingPane/> : null}
-        {this.paneMatch(this.props.pane.current, "landing", "projects") ?
-          <ProjectsPane/> : null}
+          <LandingPane/> : null }
+        { this.paneMatch(this.props.pane.current, "landing", "projects") ?
+          <ProjectsPane/> : null }
       </Fragment>
     );
   }
@@ -60,7 +60,7 @@ class App extends Component {
           <div className={ this.generateClassName() }>
             <Route path="/" render={ () =>
               this.buildPanes()
-            }/>
+            } />
           </div>
         </BrowserRouter>
       </div>

@@ -9,6 +9,7 @@ import * as actions from "../actions";
 class LandingPane extends Component {
   componentDidMount() {
     console.log("LandingPane mounted");
+    this.props.fetchComments();
   }
 
   renderComments() {
@@ -69,7 +70,7 @@ class LandingPane extends Component {
             </div>
         </div>
         <div id="hero-buffer" />
-        {this.renderComments()}
+        { this.renderComments() }
       </div>
     )
   }

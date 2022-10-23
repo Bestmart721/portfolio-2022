@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class CommentList extends Component {
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <div>
@@ -11,4 +15,8 @@ class CommentList extends Component {
   }
 }
 
-export default connect()(CommentList);
+function mapStateToProps(state) {
+  return { comments: state.comments };
+}
+
+export default connect(mapStateToProps)(CommentList);

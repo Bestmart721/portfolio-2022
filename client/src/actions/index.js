@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { FETCH_USER, SET_PANE } from './types';
+import {
+  FETCH_USER,
+  FETCH_COMMENTS,
+  POST_COMMENT,
+  SET_PANE
+} from './types';
 
 export const fetchUser = () => {
   // Returns a function that can be asyncronously run by redux-thunk
@@ -8,6 +13,32 @@ export const fetchUser = () => {
     dispatch( // Only dispatch the action once we get a response
       {
         type: FETCH_USER,
+        payload: res.data
+      }
+    );
+  }
+};
+
+export const fetchComments = () => {
+  // Returns a function that can be asyncronously run by redux-thunk
+  return async function(dispatch) {
+    const res = await axios.get('/api/comments') // Send an AJAX request
+    dispatch( // Only dispatch the action once we get a response
+      {
+        type: FETCH_COMMENTS,
+        payload: res.data
+      }
+    );
+  }
+};
+
+export const postComment = (comment) => {
+  // Returns a function that can be asyncronously run by redux-thunk
+  return async function(dispatch) {
+    const res = await axios.post('/api/comments/new', comment) // AJAX request
+    dispatch( // Only dispatch the action once we get a response
+      {
+        type: POST_COMMENT,
         payload: res.data
       }
     );
