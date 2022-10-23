@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
+const validateComment = require('../middlewares/validateComment');
 const Comment = mongoose.model('comments');
 
 module.exports = (app) => {
@@ -14,6 +15,7 @@ module.exports = (app) => {
   app.post(
     '/api/comments/new',
     requireLogin,
+    validateComment,
     async (req, res) => {
       const {title, body} = req.body;
       const comment = new Comment({
@@ -24,5 +26,5 @@ module.exports = (app) => {
       comment.save();
       //res.redirect('/api/comments');
     }
-  )
+  );
 };
