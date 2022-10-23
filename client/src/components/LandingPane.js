@@ -23,7 +23,7 @@ class LandingPane extends Component {
           <div className="comments">
             <CommentList />
             <p className="comment-prompt">
-              <Link to="/auth/google">Log in</Link>
+              <a to="/auth/google">Log in</a>
               <p>to comment</p>
             </p>
           </div>

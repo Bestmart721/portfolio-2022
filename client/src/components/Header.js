@@ -13,9 +13,9 @@ class Header extends Component {
         return (
           <div>
             <li>
-              <Link to="/auth/google">
+              <a href="/auth/google">
                 Log in with Google
-              </Link>
+              </a>
             </li>
           </div>
         );
@@ -24,9 +24,9 @@ class Header extends Component {
         return (
           <div>
             <h1>Logged in as</h1>
-            <Link to="/api/logout">
+            <a href="/api/logout">
               Log out
-            </Link>
+            </a>
           </div>
         );
     }

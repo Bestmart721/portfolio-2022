@@ -11,35 +11,14 @@ class CommentBox extends Component {
         //validate={validate}
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <h2>Simple Default Input</h2>
             <div>
-              <label>First Name</label>
-              <Field name="firstName" component="input" placeholder="First Name" />
+              <label>Author</label>
+              <Field name="title" component="input" placeholder="Are you George?" />
             </div>
-
-            <h2>Render Function</h2>
-            <Field
-              name="bio"
-              render={({ input, meta }) => (
-                <div>
-                  <label>Bio</label>
-                  <textarea {...input} />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
-                </div>
-              )}
-            />
-
-            <h2>Render Function as Children</h2>
-            <Field name="phone">
-              {({ input, meta }) => (
-                <div>
-                  <label>Phone</label>
-                  <input type="text" {...input} placeholder="Phone" />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
-                </div>
-              )}
-            </Field>
-
+            <div>
+              <label>Body</label>
+              <Field name="content" component="input" placeholder="George's thoughts" />
+            </div>
             <button type="submit">Submit</button>
           </form>
         )}

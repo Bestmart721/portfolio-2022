@@ -35,8 +35,9 @@ export const fetchComments = () => {
 export const postComment = (comment) => {
   // Returns a function that can be asyncronously run by redux-thunk
   return async function(dispatch) {
-    console.log("Posting a comment!");
-    const res = await axios.post('/api/comments/new', comment) // AJAX request
+    console.log("Posting a comment: ");
+    console.log(comment);
+    const res = await axios.post('/api/comments/new', comment); // AJAX request
     dispatch( // Only dispatch the action once we get a response
       {
         type: POST_COMMENT,

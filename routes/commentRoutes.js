@@ -17,14 +17,23 @@ module.exports = (app) => {
     requireLogin,
     validateComment,
     async (req, res) => {
-      const {title, body} = req.body;
+      console.log(req.body);
+      const {title, content} = req.body;
+      console.log(title);
+      console.log(content);
       const comment = new Comment({
         title,
-        body,
+        content,
+        created: Date.now(),
+        updated: Date.now(),
         _user: req.user.id
       });
-      comment.save();
-      //res.redirect('/api/comments');
+      try {
+        await comment.save();
+        res.status(200).redirect('/api/comments');
+      } catch (err) {
+        res.status(501).send(err);
+      }
     }
   );
 };
