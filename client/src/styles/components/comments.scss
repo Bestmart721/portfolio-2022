@@ -1,0 +1,11 @@
+@use "../palette" as *;
+
+.comments {
+
+}
+
+.comment-prompt {
+    color: $medium;
+    display: flex;
+    flex-direction: row;
+}

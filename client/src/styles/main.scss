@@ -1,0 +1,12 @@
+@use "palette" as *;
+@use "components/all";
+@use "fonts" as *;
+
+body {
+    background-color: $dark;
+    color: $off-white;
+}
+
+h1 {
+    font-family: $Staatliches, Arial, sans-serif;
+}

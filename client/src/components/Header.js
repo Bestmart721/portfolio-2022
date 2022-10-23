@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Header extends Component {
@@ -12,9 +13,9 @@ class Header extends Component {
         return (
           <div>
             <li>
-              <a href="/auth/google">
+              <Link to="/auth/google">
                 Log in with Google
-              </a>
+              </Link>
             </li>
           </div>
         );
@@ -23,18 +24,15 @@ class Header extends Component {
         return (
           <div>
             <h1>Logged in as</h1>
-            <li>
-              <a href="/api/logout">
-                Log out
-              </a>
-            </li>
+            <Link to="/api/logout">
+              Log out
+            </Link>
           </div>
         );
     }
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.renderContent()}
