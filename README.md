@@ -23,4 +23,4 @@ Planned changes:
   
  An instance of the app can be found deployed at: https://still-wildwood-50354.herokuapp.com/
 
-This app was made with the help of Stephen Grider's [Node with React](https://www.udemy.com/course/node-with-react-fullstack-web-development/) course, which guided me through some of the finer nuances of application architecture and deployment when other documentation was sparse or decentralized.
+_This app was made with the help of Stephen Grider's [Node with React](https://www.udemy.com/course/node-with-react-fullstack-web-development/) course, which guided me through some of the finer nuances of application architecture and deployment when other documentation was sparse or decentralized._
