@@ -1,29 +1,12 @@
 @use "../palette" as *;
 
-@keyframes fadein {
-    0% {
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
-.fadein {
-    animation-name: fadein;
-    animation-duration: 0s;
-    animation-delay: 2.4s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-out;
-}
-
 @keyframes heroIn {
     0% {
-        opacity: 40%;
+        opacity: 0.4;
         transform: translate(0%, 10%) scale(70%, 40%)
     }
     68.7% {
-        opacity: 100%;
+        opacity: 1;
         transform: translate(0%, -5%) scale(60%, 150%)
     }
     100% {
@@ -65,11 +48,11 @@
 
 @keyframes piece3 {
     0% {
-        opacity: 20%;
+        opacity: 0.2;
         transform: translate(0%, -60%) scale(50%, 50%);
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translate(0%, 0%) scale(100%, 100%);
     }
 }
@@ -85,11 +68,11 @@
 
 @keyframes piece5 {
     0% {
-        opacity: 60%;
+        opacity: 0.6;
         transform: translate(0%, -20%) scale(90%, 30%) rotate(-30deg);
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
     }
 }
@@ -116,11 +99,11 @@
 
 @keyframes piece8 {
     0% {
-        opacity: 40%;
+        opacity: 0.4;
         transform: translate(200%, -60%) scale(150%, 30%) rotate(-80deg);
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
     }
 }
