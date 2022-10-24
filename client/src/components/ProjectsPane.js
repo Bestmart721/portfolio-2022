@@ -10,7 +10,7 @@ class ProjectsPane extends Component {
 
   renderContent() {
     return (
-      <div className="ProjectsPane">
+      <div className="projects-pane">
         <h1>Projects</h1>
         <Link to="/" onClick={ () => this.props.setPane('landing') }>
           Go to landing

@@ -22,10 +22,10 @@ class LandingPane extends Component {
         return (
           <div className="comments">
             <CommentList />
-            <p className="comment-prompt">
-              <a to="/auth/google">Log in</a>
+            <div className="comment-prompt">
+              <a href="/auth/google">Log in</a>
               <p>to comment</p>
-            </p>
+            </div>
           </div>
         );
       default:
@@ -50,8 +50,8 @@ class LandingPane extends Component {
           Go to projects
         </Link>
         <h1 className="hero">SCHNEIDER</h1>
-        <div className="hero-footer">
-          <div className="hero-footer-1">
+        <div className="hero-footer-box">
+          <div className="hero-footer small-line">
             <a href="https://www.linkedin.com"
                target="_blank"
                rel="noopener noreferrer">LinkedIn</a>
@@ -62,12 +62,12 @@ class LandingPane extends Component {
                target="_blank"
                rel="noopener noreferrer">Itch.io</a>
           </div>
-          <div className="hero-footer-2">
+          <div className="hero-footer small-line">
             <a href="https://www.linkedin.com"
                target="_blank"
                rel="noopener noreferrer">My Resume</a>
             <a href="mailto:hdschnei@ncsu.edu">Email me</a>
-            </div>
+          </div>
         </div>
         <div id="hero-buffer" />
         { this.renderComments() }

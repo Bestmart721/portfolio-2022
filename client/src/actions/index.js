@@ -44,6 +44,7 @@ export const postComment = (comment) => {
         payload: res.data
       }
     );
+    dispatch(fetchUser());
   }
 };
 

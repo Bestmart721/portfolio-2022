@@ -33,7 +33,9 @@ passport.use(
         done(null, existingUser);
       } else {
         //Make new db entry with user, await and then call done
-        const user = await new User({ googleID: profile.id }).save();
+        const user = await new User(
+          { googleID: profile.id }
+        ).save();
         done(null, user);
       };
     }

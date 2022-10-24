@@ -4,27 +4,57 @@ import { Form, Field } from 'react-final-form'
 import * as actions from "../actions";
 
 class CommentBox extends Component {
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <Form
         onSubmit={this.props.postComment}
         //validate={validate}
-        render={({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Author</label>
-              <Field name="title" component="input" placeholder="Are you George?" />
+        render={({ handleSubmit, submitting }) =>
+          this.props.auth && this.props.auth.posted ?
+          (
+            <div className="commentbox">
+              <div className="small-line">
+                <p>Thank you for your feedback!</p>
+              </div>
+              <div className="small-line">
+                <p>View</p>
+                <a href="/#my-testimonial">your testimonial</a>
+              </div>
             </div>
-            <div>
-              <label>Body</label>
-              <Field name="content" component="input" placeholder="George's thoughts" />
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        )}
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="commentbox">
+                <div>
+                  <label>Post Title</label>
+                  <Field name="title"
+                         component="input"
+                         placeholder="Are you George?" />
+                </div>
+                <div>
+                  <label>Body</label>
+                  <Field name="content"
+                         component="textarea"
+                         placeholder="George's thoughts" />
+                </div>
+                <button type="submit" disabled={ submitting }>Submit</button>
+              </div>
+            </form>
+          )
+        }
       />
     );
   }
 }
+//                       { auth } <- Grabs the auth field of state
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+    comments: state.comments
+  }; // Equilalent to { auth : auth }
+}
 
-export default connect(null, actions)(CommentBox);
+export default connect(mapStateToProps, actions)(CommentBox);

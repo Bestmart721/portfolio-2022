@@ -12,6 +12,16 @@ module.exports = (app) => {
     }
   );
 
+  app.get(
+    '/api/resetuser',
+    requireLogin,
+    async (req, res) => {
+      req.user.posted = false;
+      const user = await req.user.save(); // Replace potentially stale User
+      res.status(200).send(user);
+    }
+  )
+
   app.post(
     '/api/comments/new',
     requireLogin,
@@ -30,6 +40,8 @@ module.exports = (app) => {
       });
       try {
         await comment.save();
+        req.user.posted = true;
+        const user = await req.user.save(); // Replace potentially stale User
         res.status(200).redirect('/api/comments');
       } catch (err) {
         res.status(501).send(err);

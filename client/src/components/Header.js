@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -11,23 +11,19 @@ class Header extends Component {
       case false:
         // AJAX says we have no current user session
         return (
-          <div>
-            <li>
-              <a href="/auth/google">
-                Log in with Google
-              </a>
-            </li>
-          </div>
+          <a href="/auth/google">
+            Log in with Google
+          </a>
         );
       default:
         // AJAX gave us something other than false / null
         return (
-          <div>
+          <Fragment>
             <h1>Logged in as</h1>
             <a href="/api/logout">
               Log out
             </a>
-          </div>
+          </Fragment>
         );
     }
   }
