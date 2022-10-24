@@ -9,6 +9,36 @@ body {
     width: 100%;
     height: auto;
     overflow-x: hidden;
+    font-family: monospace;
+}
+
+@keyframes shake {
+    @for $i from 0 through 10 {
+        $percent: 0% + 10 * $i;
+        $rand1: -2% + random(4%);
+        $rand2: -4% + random(8%);
+        #{$percent} { transform: translate($rand1, $rand2); }
+    }
+}
+
+a {
+    color: $motif-color-saturated;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $dark;
+    background-color: $motif-color-saturated;
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-fill-mode: none;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+a:active {
+    background-color: $off-white;
 }
 
 .container {

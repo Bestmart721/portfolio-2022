@@ -1,3 +1,5 @@
+@use "../palette" as *;
+
 .pane {
     background-color: inherit;
     position: absolute;
@@ -9,6 +11,85 @@
 
 .about-pane {
     transform: translateX(-100%);
+    display: flex;
+    flex-direction: row;
+
+    @keyframes dropIn {
+        0% {
+            transform: translate(-200%, -400%) rotate(12deg) scale(800%, 1600%);
+        }
+        100% {
+            transform: translate(0%, 0%) rotate(12deg) scale(800%, 1600%);
+        }
+    }
+
+    & > .about-bg {
+        animation-name: dropIn;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        position: absolute;
+        left: 55vw;
+        top: 10vh;
+        color: $dark-medium;
+        z-index: -1;
+    }
+
+    & > .about-image {
+        position: static;
+        display: block;
+        height: 100vh;
+        width: calc(50vh + 750px);
+        overflow: hidden;
+        & > img {
+            position: relative;
+            height: 130vh;
+            width: auto;
+            @keyframes slideIn {
+                0% {
+                    transform: translate(-40%, -15%);
+                }
+                100% {
+                    transform: translate(0%, -15%);
+                }
+            }
+            $mask-img: linear-gradient(102deg, black 75%, transparent 75%);
+            -webkit-mask-image: $mask-img;
+            mask-image: $mask-img;
+            -webkit-mask-size: 70%;
+            mask-size: 70%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            animation-name: slideIn;
+            animation-fill-mode: both;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+    }
+
+    & > .about-content {
+        margin-top: 5em;
+        display: flex;
+        flex-direction: column;
+        width: 20em;
+        margin-left: -40em;
+        animation-name: slideUp;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        @keyframes slideUp {
+            0% {
+                transform: translate(-30%, 80%);
+            }
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+        & > h2 {
+            width: 45em;
+        }
+    }
 }
 
 .projects-pane {

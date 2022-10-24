@@ -27,10 +27,6 @@ module.exports = (app) => {
     requireLogin,
     validateComment,
     async (req, res) => {
-      console.log(req.body);
-      const {title, content} = req.body;
-      console.log(title);
-      console.log(content);
       const comment = new Comment({
         title,
         content,

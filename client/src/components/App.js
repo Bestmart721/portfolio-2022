@@ -29,6 +29,25 @@ class App extends Component {
   }
 
   buildPanes() {
+    if( this.pane && !this.pane.moving ) {
+      return (
+        <Fragment>
+        { this.paneMatch(
+          this.props.pane.current,
+          "about") ?
+          <AboutPane/> : null }
+        { this.paneMatch(
+          this.props.pane.current,
+          "landing",
+          "about",
+          "projects") ?
+          <LandingPane/> : null }
+        { this.paneMatch(this.props.pane.current,
+          "projects") ?
+          <ProjectsPane/> : null }
+      </Fragment>
+      )
+    }
     return (
       <Fragment>
         { this.paneMatch(
@@ -49,7 +68,7 @@ class App extends Component {
   }
 
   generateClassName() {
-    return this.props.pane.previous != this.props.pane.current ?
+    return this.props.pane.previous !== this.props.pane.current ?
       "container from-" +
       this.props.pane.previous +
       " to-" +

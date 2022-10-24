@@ -4,3 +4,7 @@ $medium: #242320;
 $medium-light: #2f2c25;
 $light: #433f2d;
 $off-white: #a9a389;
+$off-gray: darken($off-white, 30%);
+$motif-color: #c79b66;
+$motif-color-saturated: saturate(darken($motif-color, 30%), 20%);
+$motif-color-desaturated: desaturate($motif-color, 10%);

@@ -8,22 +8,22 @@ class ProjectsPane extends Component {
     console.log("ProjectsPane mounted");
   }
 
-  renderContent() {
+  render() {
     return (
       <div className="pane projects-pane">
-        <h1>Projects</h1>
-        <div className="nav-left">
-          <Link to="/" onClick={ () => this.props.setPane('landing') }>
-            Go to landing
-          </Link>
-        </div>
+        <Link className="nav-left" to="/" onClick={ () =>
+          this.props.setPane('landing') }>
+          {"<"} back
+        </Link>
       </div>
     );
   }
-
-  render() {
-    return this.renderContent();
-  }
 }
 
-export default connect(null, actions)(ProjectsPane);
+function mapStateToProps(state) {
+  return {
+    pane: state.pane
+  };
+}
+
+export default connect(mapStateToProps, actions)(ProjectsPane);

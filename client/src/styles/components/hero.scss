@@ -1,3 +1,206 @@
-.hero {
+@use "../palette" as *;
 
+@keyframes fadein {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.fadein {
+    animation-name: fadein;
+    animation-duration: 0s;
+    animation-delay: 2.4s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@keyframes heroIn {
+    0% {
+        opacity: 40%;
+        transform: translate(0%, 10%) scale(70%, 40%)
+    }
+    68.7% {
+        opacity: 100%;
+        transform: translate(0%, -5%) scale(60%, 150%)
+    }
+    100% {
+        transform: translate(0%, 0%) scale(60%, 150%)
+    }
+}
+
+.hero {
+    color: $off-white;
+    animation-name: heroIn;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(1, 0, 0.6S, 1);
+    animation-fill-mode: both;
+    margin-top: 6vh;
+    margin-bottom: 0;
+    font-size: 6em;
+    display: flex;
+    flex-direction: row;
+    height: 54vh;
+}
+
+@keyframes piece1 {
+    0% {
+        transform: translate(-400%, 50%) scale(70%, 200%) rotate(-50deg);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece2 {
+    0% {
+        transform: translate(-200%, 35%) scale(200%, 80%) rotate(120deg);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece3 {
+    0% {
+        opacity: 20%;
+        transform: translate(0%, -60%) scale(50%, 50%);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0%, 0%) scale(100%, 100%);
+    }
+}
+
+@keyframes piece4 {
+    0% {
+        transform: translate(50%, 60%) scale(150%, 150%) rotate(60deg);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece5 {
+    0% {
+        opacity: 60%;
+        transform: translate(0%, -20%) scale(90%, 30%) rotate(-30deg);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece6 {
+    0% {
+        color: $motif-color-saturated;
+        transform: translate(0%, -700%) scale(10%, 400%);
+    }
+    100% {
+        color: $off-white;
+        transform: translate(0%, 0%) scale(100%, 100%);
+    }
+}
+
+@keyframes piece7 {
+    0% {
+        transform: translate(150%, 0%) scale(250%, 40%) rotate(-90deg);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece8 {
+    0% {
+        opacity: 40%;
+        transform: translate(200%, -60%) scale(150%, 30%) rotate(-80deg);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+@keyframes piece9 {
+    0% {
+        transform: translate(350%, 35%) scale(200%, 40%) rotate(-180deg);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(100%, 100%) rotate(0deg);
+    }
+}
+
+.hero-piece-1 {
+    animation-name: piece1;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-2 {
+    animation-name: piece2;
+    animation-duration: 0.9s;
+    animation-delay: 0.1s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-3 {
+    animation-name: piece3;
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-4 {
+    animation-name: piece4;
+    animation-duration: 0.7s;
+    animation-delay: 0.3s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-5 {
+    animation-name: piece5;
+    animation-duration: 0.6s;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-6 {
+    animation-name: piece6;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-7 {
+    animation-name: piece7;
+    animation-duration: 0.6s;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-8 {
+    animation-name: piece8;
+    animation-duration: 0.6s;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
+}
+
+.hero-piece-9 {
+    animation-name: piece9;
+    animation-duration: 0.6s;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
+    animation-fill-mode: both;
 }

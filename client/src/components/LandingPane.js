@@ -13,6 +13,7 @@ class LandingPane extends Component {
   }
 
   renderComments() {
+    if (this.props.pane && this.props.pane.current !== 'landing') return '';
     switch (this.props.auth) {
       case null:
         // AJAX for log in is still hanging...
@@ -43,36 +44,53 @@ class LandingPane extends Component {
     return (
       <div className="pane landing-pane">
         <div className="landing-box">
-          <Header />
-          <Link className="nav-left" to="/about" onClick={ () => this.props.setPane('about') }>
-            Go to about
-          </Link>
-          <Link className="nav-right" to="/projects" onClick={ () => this.props.setPane('projects') }>
-            Go to projects
-          </Link>
-          <h1 className="hero">SCHNEIDER</h1>
-          <div className="hero-footer-box">
-            <div className="hero-footer small-line">
-              <a href="https://www.linkedin.com"
-                 target="_blank"
-                 rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://www.github.com/daatguy"
-                 target="_blank"
-                 rel="noopener noreferrer">Github</a>
-              <a href="https://itch.io/profile/daatguy"
-                 target="_blank"
-                 rel="noopener noreferrer">Itch.io</a>
-            </div>
-            <div className="hero-footer small-line">
-              <a href="https://www.linkedin.com"
-                 target="_blank"
-                 rel="noopener noreferrer">My Resume</a>
-              <a href="mailto:hdschnei@ncsu.edu">Email me</a>
+          <div className="fadein">
+            <Header />
+            <Link className="nav-left" to="/about" onClick={ () =>
+              this.props.setPane('about') }>
+              {"<"} about
+            </Link>
+            <Link className="nav-right" to="/projects" onClick={ () =>
+              this.props.setPane('projects') }>
+              projects {">"}
+            </Link>
+          </div>
+          <div className="hero">
+            <h1 className="hero-piece-1">S</h1>
+            <h1 className="hero-piece-2">C</h1>
+            <h1 className="hero-piece-3">H</h1>
+            <h1 className="hero-piece-4">N</h1>
+            <h1 className="hero-piece-5">E</h1>
+            <h1 className="hero-piece-6">I</h1>
+            <h1 className="hero-piece-7">D</h1>
+            <h1 className="hero-piece-8">E</h1>
+            <h1 className="hero-piece-9">R</h1>
+          </div>
+          <div className="fadein">
+            <div className="hero-footer-box">
+              <div className="hero-footer small-line">
+                <a href="https://www.github.com/daatguy"
+                   target="_blank"
+                   rel="noopener noreferrer">Github</a>
+                <a href="https://www.linkedin.com"
+                   target="_blank"
+                   rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://itch.io/profile/daatguy"
+                   target="_blank"
+                   rel="noopener noreferrer">Itch.io</a>
+              </div>
+              <div className="hero-footer small-line">
+                <a href="https://www.linkedin.com"
+                   target="_blank"
+                   rel="noopener noreferrer">Resume</a>
+                <a href="mailto:hdschnei@ncsu.edu">Email</a>
+              </div>
             </div>
           </div>
-          <div id="hero-buffer" />
         </div>
-        { this.renderComments() }
+        <div className="fadein">
+          { this.renderComments() }
+        </div>
       </div>
     )
   }

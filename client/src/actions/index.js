@@ -3,7 +3,8 @@ import {
   FETCH_USER,
   FETCH_COMMENTS,
   POST_COMMENT,
-  SET_PANE
+  SET_PANE,
+  END_PANE_MOVE
 } from './types';
 
 export const fetchUser = () => {
@@ -50,10 +51,18 @@ export const postComment = (comment) => {
 
 export const setPane = (pane) => {
   console.log("setting pane to " + pane);
-  return (
-    {
-      type: SET_PANE,
-      payload: pane
-    }
-  );
+  return async function(dispatch) {
+    dispatch(
+      {
+        type: SET_PANE,
+        payload: pane
+      }
+    );
+    setTimeout(() => dispatch(
+      {
+        type: END_PANE_MOVE,
+        payload: pane
+      }
+    ), 600);
+  };
 };

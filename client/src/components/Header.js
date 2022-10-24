@@ -11,18 +11,24 @@ class Header extends Component {
       case false:
         // AJAX says we have no current user session
         return (
-          <a href="/auth/google">
-            Log in with Google
-          </a>
+          <div className="header-item">
+            <a href="/auth/google">
+              Log in with Google
+            </a>
+          </div>
         );
       default:
         // AJAX gave us something other than false / null
         return (
           <Fragment>
-            <h1>Logged in as</h1>
-            <a href="/api/logout">
-              Log out
-            </a>
+            <div className="header-item">
+              <p>Logged in as</p>
+            </div>
+            <div className="header-item">
+              <a href="/api/logout">
+                Log out
+              </a>
+            </div>
           </Fragment>
         );
     }
@@ -30,7 +36,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div className="header">
         { this.renderContent() }
       </div>
     );
