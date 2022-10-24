@@ -15,8 +15,8 @@ body {
 @keyframes shake {
     @for $i from 0 through 10 {
         $percent: 0% + 10 * $i;
-        $rand1: -2% + random(4%);
-        $rand2: -4% + random(8%);
+        $rand1: -2% + calc(random(4) * 1%);
+        $rand2: -4% + calc(random(8) * 1%);
         #{$percent} { transform: translate($rand1, $rand2); }
     }
 }

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const validateComment = require('../middlewares/validateComment');
+const disallowProd = require('../middlewares/disallowProd');
 const Comment = mongoose.model('comments');
 
 module.exports = (app) => {
@@ -14,6 +15,7 @@ module.exports = (app) => {
 
   app.get(
     '/api/resetuser',
+    disallowProd,
     requireLogin,
     async (req, res) => {
       req.user.posted = false;
