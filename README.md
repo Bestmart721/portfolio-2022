@@ -18,6 +18,6 @@ Planned changes:
   - Other refactoring (I am still a beginner with React/Redux, some of my code is I'm sure inefficient or redundant)
  
  Documentation is sparse at the moment. Many features in the app are very new and subject to refactoring.
- Indepth documentation will come once the React app's structure has been truly pinned down.
+ In depth documentation will come once the React app's structure has been truly pinned down.
   
  An instance of the app can be found deployed at: https://still-wildwood-50354.herokuapp.com/
