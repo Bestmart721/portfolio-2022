@@ -5,8 +5,8 @@ Users can authenticate via OAuth and leave testimonials on the homepage.
 (1 per user at the moment, editing one's previous testimonial is a goal).
 
 Navigation is done via dynamic rendering inside the React router, 
-alongside using Redux for storing page state (previously visited, 
-current, whether the app is moving between pages, etc.).
+alongside using Redux for storing carousel "pane" state (the previously visited pane, 
+the current one, whether the app is moving between panes, etc.).
 
 Planned changes:
   - Add projects tab to show actual portfolio info
@@ -14,7 +14,7 @@ Planned changes:
   - Editing testimonials as previously mentioned
   - Add Github webhook to backend for live commit updates (maybe on the landing page?)
   - Further input sanitization (likely through middleware)
-  - Sass refactoring
+  - Sass refactoring (Sass was hacked together in a couple of hours)
   - Other refactoring (I am still a beginner with React/Redux, some of my code is I'm sure inefficient or redundant)
   
  An instance of the app can be found deployed at: https://still-wildwood-50354.herokuapp.com/
