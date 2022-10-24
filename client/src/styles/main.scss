@@ -3,8 +3,15 @@
 @use "fonts" as *;
 
 body {
+    margin: 0;
     background-color: $dark;
     color: $off-white;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.container {
 }
 
 h1 {

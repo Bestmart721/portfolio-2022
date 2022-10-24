@@ -50,20 +50,21 @@ class App extends Component {
 
   generateClassName() {
     return this.props.pane.previous != this.props.pane.current ?
-      "container from-pane-" + this.props.pane.previous : "container";
+      "container from-" +
+      this.props.pane.previous +
+      " to-" +
+      this.props.pane.current : "container";
   }
 
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <div className={ this.generateClassName() }>
-            <Route path="/" render={ () =>
-              this.buildPanes()
-            } />
-          </div>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <div className={ this.generateClassName() }>
+          <Route path="/" render={ () =>
+            this.buildPanes()
+          } />
+        </div>
+      </BrowserRouter>
     );
   }
 };

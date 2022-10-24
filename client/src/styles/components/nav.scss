@@ -1,0 +1,79 @@
+.nav-left {
+    position: absolute;
+    top: 50vh;
+    left: 0%;
+}
+
+.nav-right {
+    position: absolute;
+    top: 50vh;
+    right: 0%;
+}
+
+@keyframes moveMiddleToRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveMiddleToLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveRightToMiddle {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveLeftToMiddle {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.to-about {
+    animation-name: moveMiddleToLeft;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+}
+
+.from-about {
+    animation-name: moveLeftToMiddle;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+}
+
+.to-projects {
+    animation-name: moveMiddleToRight;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+}
+
+.from-projects {
+    animation-name: moveRightToMiddle;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+}

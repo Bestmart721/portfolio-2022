@@ -41,35 +41,37 @@ class LandingPane extends Component {
 
   renderContent() {
     return (
-      <div className="landing-pane">
-        <Header />
-        <Link to="/about" onClick={ () => this.props.setPane('about') }>
-          Go to about
-        </Link>
-        <Link to="/projects" onClick={ () => this.props.setPane('projects') }>
-          Go to projects
-        </Link>
-        <h1 className="hero">SCHNEIDER</h1>
-        <div className="hero-footer-box">
-          <div className="hero-footer small-line">
-            <a href="https://www.linkedin.com"
-               target="_blank"
-               rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.github.com/daatguy"
-               target="_blank"
-               rel="noopener noreferrer">Github</a>
-            <a href="https://itch.io/profile/daatguy"
-               target="_blank"
-               rel="noopener noreferrer">Itch.io</a>
+      <div className="pane landing-pane">
+        <div className="landing-box">
+          <Header />
+          <Link className="nav-left" to="/about" onClick={ () => this.props.setPane('about') }>
+            Go to about
+          </Link>
+          <Link className="nav-right" to="/projects" onClick={ () => this.props.setPane('projects') }>
+            Go to projects
+          </Link>
+          <h1 className="hero">SCHNEIDER</h1>
+          <div className="hero-footer-box">
+            <div className="hero-footer small-line">
+              <a href="https://www.linkedin.com"
+                 target="_blank"
+                 rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.github.com/daatguy"
+                 target="_blank"
+                 rel="noopener noreferrer">Github</a>
+              <a href="https://itch.io/profile/daatguy"
+                 target="_blank"
+                 rel="noopener noreferrer">Itch.io</a>
+            </div>
+            <div className="hero-footer small-line">
+              <a href="https://www.linkedin.com"
+                 target="_blank"
+                 rel="noopener noreferrer">My Resume</a>
+              <a href="mailto:hdschnei@ncsu.edu">Email me</a>
+            </div>
           </div>
-          <div className="hero-footer small-line">
-            <a href="https://www.linkedin.com"
-               target="_blank"
-               rel="noopener noreferrer">My Resume</a>
-            <a href="mailto:hdschnei@ncsu.edu">Email me</a>
-          </div>
+          <div id="hero-buffer" />
         </div>
-        <div id="hero-buffer" />
         { this.renderComments() }
       </div>
     )

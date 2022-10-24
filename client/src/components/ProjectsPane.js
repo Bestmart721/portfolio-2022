@@ -10,11 +10,13 @@ class ProjectsPane extends Component {
 
   renderContent() {
     return (
-      <div className="projects-pane">
+      <div className="pane projects-pane">
         <h1>Projects</h1>
-        <Link to="/" onClick={ () => this.props.setPane('landing') }>
-          Go to landing
-        </Link>
+        <div className="nav-left">
+          <Link to="/" onClick={ () => this.props.setPane('landing') }>
+            Go to landing
+          </Link>
+        </div>
       </div>
     );
   }

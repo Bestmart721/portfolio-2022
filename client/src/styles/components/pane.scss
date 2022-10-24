@@ -1,0 +1,16 @@
+.pane {
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-pane {
+    transform: translateX(-100%);
+}
+
+.projects-pane {
+    transform: translateX(100%);
+}

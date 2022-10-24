@@ -10,11 +10,13 @@ class AboutPane extends Component {
 
   renderContent() {
     return (
-      <div className="about-pane">
+      <div className="pane about-pane">
         <h1>About</h1>
-        <Link to="/" onClick={ () => this.props.setPane('landing') }>
-          Go to landing
-        </Link>
+        <div className="nav-right">
+          <Link to="/" onClick={ () => this.props.setPane('landing') }>
+            Go to landing
+          </Link>
+        </div>
       </div>
     );
   }
