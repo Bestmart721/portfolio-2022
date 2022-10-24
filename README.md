@@ -10,7 +10,7 @@ the current one, whether the app is moving between panes, etc.).
 
 Planned changes: 
   - Add projects tab to show actual portfolio info
-  - Finish styling -- looking at you, form box.
+  - Finish styling: looking at you, form box.
   - MongoDB User Schema refactor to include Google name / profile picture to display on testimonials
   - Editing testimonials as previously mentioned
   - Add Github webhook to backend for live commit updates (maybe on the landing page?)
