@@ -22,6 +22,5 @@ Planned changes:
  In depth documentation will come once the React app's structure has been truly pinned down.
   
  An instance of the app can be found deployed at: https://still-wildwood-50354.herokuapp.com/
- (Update: still getting SASS to build correctly on production, you might have to do a little searching to find the nav buttons)
 
 _This app was made with the help of Stephen Grider's [Node with React](https://www.udemy.com/course/node-with-react-fullstack-web-development/) course, which guided me through some of the finer nuances of application architecture and deployment when other documentation was sparse or decentralized._
