@@ -1,5 +1,6 @@
 .header {
     position: absolute;
+    height: 3.5rem;
     right: 10px;
     display: flex;
     flex-direction: row;
@@ -7,5 +8,8 @@
 }
 
 .header-item {
-    margin-left: 8px;
+    & > a {
+        display: inline-block;
+        padding: 10px;
+    }
 }

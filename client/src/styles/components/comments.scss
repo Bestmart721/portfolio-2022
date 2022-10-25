@@ -8,7 +8,12 @@
 }
 
 .comment-prompt {
-    color: $medium;
+    color: $light;
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    & > p {
+        margin: 0.5em;
+    }
+    margin-bottom: 4rem;
 }
