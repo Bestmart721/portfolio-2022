@@ -7,10 +7,10 @@ class CommentList extends Component {
     console.log(this.props);
   }
 
-  renderComments() {
+  renderComments(match) {
     return (this.props.comments && this.props.comments.map(
       (comment, i) =>
-          <Comment key={comment._id} data={comment} />
+          (i % 2 === match ? (<Comment key={comment._id} data={comment} />) : null)
       ) || null
     );
   }
@@ -19,7 +19,10 @@ class CommentList extends Component {
     return (
       <Fragment>
         <h3 className="testimonials-header">See what people have to say:</h3>
-        { this.renderComments() }
+        <div className="comments-stagger">
+          <div className="comments-stagger-left">{ this.renderComments(0) }</div>
+          <div className="comments-stagger-right">{ this.renderComments(1) }</div>
+        </div>
       </Fragment>
     )
   }

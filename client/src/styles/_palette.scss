@@ -8,3 +8,4 @@ $off-gray: darken($off-white, 30%);
 $motif-color: #c79b66;
 $motif-color-saturated: saturate(darken($motif-color, 30%), 20%);
 $motif-color-desaturated: desaturate($motif-color, 10%);
+$motif-color-dark: desaturate(darken($motif-color-saturated, 15%), 15%);

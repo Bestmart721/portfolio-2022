@@ -9,8 +9,8 @@ class Comment extends Component {
       <div id={
         this.props.auth._id === this.props.data._user ? "my-testimonial" : null
       } className="comment-card">
-        <p>{ this.props.data.title }</p>
-        <p>{ this.props.data.content }</p>
+        <p className="title">{ this.props.data.title }</p>
+        <p className="body">{ this.props.data.content }</p>
       </div>
     )
   }

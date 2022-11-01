@@ -16,7 +16,7 @@ class AboutPane extends Component {
       <div className="pane about-pane">
         { this.justMovedIn() ? (
           <Fragment>
-            <h1 className="about-bg">ABOUT</h1>
+            <h1 className="about-bg noselect">ABOUT</h1>
             <div className="about-image">
               <img src={AboutImage} alt="a beautiful picture of me"/>
             </div>

@@ -55,7 +55,15 @@ class LandingPane extends Component {
               projects {">"}
             </Link>
           </div>
-          <div className="hero">
+            <div className="bg-hero noselect">
+              <h1>QUAKER</h1>
+              <h1>QUAKER</h1>
+              <h1>QUAKER</h1>
+              <h1>QUAKER</h1>
+              <h1>QUAKER</h1>
+              <h1>QUAKER</h1>
+          </div>
+          <div className="hero noselect">
             <h1 className="hero-piece-1">S</h1>
             <h1 className="hero-piece-2">C</h1>
             <h1 className="hero-piece-3">H</h1>
@@ -72,7 +80,7 @@ class LandingPane extends Component {
                 <a href="https://www.github.com/daatguy"
                    target="_blank"
                    rel="noopener noreferrer">Github</a>
-                <a href="https://www.linkedin.com"
+                <a href="https://www.linkedin.com/in/quaker-schneider-947a97249"
                    target="_blank"
                    rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://itch.io/profile/daatguy"

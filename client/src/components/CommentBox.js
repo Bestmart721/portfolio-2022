@@ -16,7 +16,7 @@ class CommentBox extends Component {
         render={({ handleSubmit, submitting }) =>
           this.props.auth && this.props.auth.posted ?
           (
-            <div className="commentbox">
+            <div className="commentbox commentbox-center">
               <div className="small-line">
                 <p>Thank you for your feedback!</p>
               </div>
@@ -27,20 +27,20 @@ class CommentBox extends Component {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div className="commentbox">
-                <div>
-                  <label>Post Title</label>
+              <div className="commentbox commentbox-form">
+                <div className="inputbox">
+                  <label>post title</label>
                   <Field name="title"
                          component="input"
-                         placeholder="Are you George?" />
+                         placeholder="a short and catchy tagline (optional)" />
                 </div>
-                <div>
-                  <label>Body</label>
+                <div className="inputbox">
+                  <label>testimonial</label>
                   <Field name="content"
                          component="textarea"
-                         placeholder="George's thoughts" />
+                         placeholder="write your testimonial here" />
                 </div>
-                <button type="submit" disabled={ submitting }>Submit</button>
+                <button type="submit" disabled={ submitting }>SUBMIT</button>
               </div>
             </form>
           )

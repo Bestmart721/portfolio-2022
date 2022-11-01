@@ -68,11 +68,12 @@ class App extends Component {
   }
 
   generateClassName() {
-    return this.props.pane.previous !== this.props.pane.current ?
+    return (this.props.pane.previous !== this.props.pane.current ?
       "container from-" +
       this.props.pane.previous +
       " to-" +
-      this.props.pane.current : "container";
+      this.props.pane.current :
+      "container");
   }
 
   render() {

@@ -3,8 +3,44 @@
 .comments {
     margin-top: 50vh;
     display: flex;
+    align-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.testimonials-header {
+    margin-top: 8em;
+    margin-bottom: 2em;
+}
+
+.comments-stagger {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 60vw;
+    & > div > .comment-card {
+        flex-shrink: 0;
+        margin: 15px 15px 15px;
+        padding: 15px;
+        border: 1px solid $motif-color-dark;
+        color: darken($off-white, 10%);
+        & > p.title {
+            margin-bottom: 2em;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: $off-white;
+        }
+    }
+    & > div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+}
+
+.comments-stagger-left {
+    transform: translateY(8vh);
 }
 
 .comment-prompt {
@@ -16,4 +52,119 @@
         margin: 0.5em;
     }
     margin-bottom: 4rem;
+}
+
+@keyframes fireEffect {
+    0% {
+        box-shadow: 0px 0px 0px $motif-color-dark;
+    }
+    15% {
+        box-shadow: 0px -20px 0px $motif-color-dark;
+    }
+    25% {
+        box-shadow: 0px 0px 40px $motif-color-dark;
+    }
+    35% {
+        box-shadow: 0px 20px 0px $motif-color-dark;
+    }
+    40% {
+        box-shadow: 10px 0px 0px $motif-color-dark;
+    }
+    55% {
+        box-shadow: -10px -10px 0px $motif-color-dark;
+    }
+    50% {
+        box-shadow: 0px 0px 0px $motif-color-dark;
+    }
+    65% {
+        box-shadow: 0px -20px 0px $motif-color-dark;
+    }
+    75% {
+        box-shadow: 0px 0px 0px $motif-color-dark;
+    }
+    90% {
+        box-shadow: -10px 10px 0px $motif-color-dark;
+    }
+    100% {
+        box-shadow: 0px 0px 0px $motif-color-dark;
+    }
+}
+
+.commentbox {
+    animation-name: fireEffect;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    width: 40vw;
+    padding: 40px;
+    border: 1px solid $motif-color-dark;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    &.commentbox-center {
+        align-items: center;
+    }
+    &.commentbox-form:hover {
+        padding: 45px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+    &.commentbox-form:focus-within {
+        padding: 55px;
+        margin-top: -15px;
+        margin-bottom: -15px;
+    }
+    & > .inputbox {
+        color: darken($off-white, 10%);
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        & > label {
+            width: 25%;
+        }
+        & > input {
+            color: darken($off-gray, 10%);
+            &:focus {
+                color: lighten($off-gray, 10%);
+                background-color: desaturate(darken($motif-color-dark, 5%), 40%);
+            }
+            width: 75%;
+            border: 1px solid $motif-color-dark;
+            background-color: $dark;
+            color: $off-white;
+            outline: solid 0px black;
+        }
+        & > textarea {
+            color: darken($off-gray, 10%);
+            &:focus {
+                color: lighten($off-gray, 10%);
+                background-color: desaturate(darken($motif-color-dark, 5%), 40%);
+            }
+            resize: vertical;
+            min-height: 30vh;
+            width: 75%;
+            border: 1px solid $motif-color-dark;
+            background-color: $dark;
+            color: $off-white;
+            outline: solid 0px black;
+        }
+    }
+    & > button {
+        font-family: monospace;
+        border: 1px solid $motif-color-dark;
+        background-color: $dark;
+        color: $motif-color-saturated;
+        width: 20%;
+        padding: 5px;
+        margin-top: -38px;
+        &:hover {
+            background-color: $motif-color-saturated;
+            color: $dark;
+            animation: shake;
+            animation-duration: 0.1s;
+            animation-fill-mode: none;
+            animation-iteration-count: infinite;
+        }
+    }
 }

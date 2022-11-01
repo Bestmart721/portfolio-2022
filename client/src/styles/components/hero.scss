@@ -1,5 +1,51 @@
 @use "../palette" as *;
 
+.bg-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 140vw;
+    height: 170vh;
+    left: -20vw;
+    margin: 0px;
+    z-index: -10;
+    opacity: 0.7;
+    & > h1 {
+        position: relative;
+        margin-bottom: 0px;
+        margin-top: -0.435em;
+        color: $motif-color-saturated;
+        text-shadow: 0px 15px $motif-color-dark;
+        font-size: 20vw;
+        transform: scaleX(125%);
+    }
+    @keyframes heroBgAppear {
+        0% {
+            opacity: 0;
+            transform: translateY(-40vh);
+        }
+        60% {
+            opacity: 0.2;
+        }
+        100% {
+            transform: translateY(0vh);
+            opacity: 0.2;
+        }
+    }
+    opacity: 0;
+    animation-name: heroBgAppear;
+    animation-timing-function: ease-out;
+    animation-duration: 1.4s;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+    $mask-img: linear-gradient(to bottom, black 10%, transparentize(black, 0.5) 50%, transparent 100%);
+    -webkit-mask-image: $mask-img;
+    mask-image: $mask-img;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
 @keyframes heroIn {
     0% {
         opacity: 0.4;
@@ -20,12 +66,20 @@
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(1, 0, 0.6S, 1);
     animation-fill-mode: both;
-    margin-top: 6vh;
-    margin-bottom: 0;
+    margin-top: 14vh;
+    margin-bottom: 0%;
     font-size: 6em;
     display: flex;
     flex-direction: row;
-    height: 54vh;
+    & > h1 {
+        transition: 0.05s;
+        text-shadow: 0px 3px $motif-color-saturated;
+        animation-fill-mode: backwards;
+        &:hover {
+            color: $motif-color-saturated;
+            text-shadow: 0px 10px $motif-color-dark;
+        }
+    }
 }
 
 @keyframes piece1 {
@@ -121,7 +175,6 @@
     animation-name: piece1;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-2 {
@@ -129,7 +182,6 @@
     animation-duration: 0.9s;
     animation-delay: 0.1s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-3 {
@@ -137,7 +189,6 @@
     animation-duration: 0.8s;
     animation-delay: 0.2s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-4 {
@@ -145,7 +196,6 @@
     animation-duration: 0.7s;
     animation-delay: 0.3s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-5 {
@@ -153,7 +203,6 @@
     animation-duration: 0.6s;
     animation-delay: 0.4s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-6 {
@@ -161,7 +210,6 @@
     animation-duration: 2s;
     animation-delay: 0.3s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-7 {
@@ -169,7 +217,6 @@
     animation-duration: 0.6s;
     animation-delay: 0.4s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-8 {
@@ -177,7 +224,6 @@
     animation-duration: 0.6s;
     animation-delay: 0.4s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }
 
 .hero-piece-9 {
@@ -185,5 +231,4 @@
     animation-duration: 0.6s;
     animation-delay: 0.4s;
     animation-timing-function: cubic-bezier(1, 0, 0, 1.1);
-    animation-fill-mode: both;
 }

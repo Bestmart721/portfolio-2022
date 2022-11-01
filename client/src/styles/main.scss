@@ -15,8 +15,8 @@ body {
 @keyframes shake {
     @for $i from 0 through 10 {
         $percent: 0% + 10 * $i;
-        $rand1: -2% + calc(random(4) * 1%);
-        $rand2: -4% + calc(random(8) * 1%);
+        $rand1: -1px + calc(random(2) * 1px);
+        $rand2: -2px + calc(random(4) * 1px);
         #{$percent} { transform: translate($rand1, $rand2); }
     }
 }
@@ -41,9 +41,28 @@ a:active {
     background-color: $off-white;
 }
 
-.container {
-}
-
 h1 {
     font-family: $Staatliches, Arial, sans-serif;
+}
+
+.small-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & > p {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    & > a {
+        margin-left: 0em;
+        margin-right: 0.5em;
+    }
+}
+
+.noselect {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
