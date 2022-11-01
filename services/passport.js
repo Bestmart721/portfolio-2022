@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => {
-  //TODO: Is this ok? Need to learn if set cookie stuff is secure
   //Return mongodb UID
   done(null, user.id);
 });

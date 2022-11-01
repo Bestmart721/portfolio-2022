@@ -32,20 +32,20 @@ class App extends Component {
     if( this.pane && !this.pane.moving ) {
       return (
         <Fragment>
-        { this.paneMatch(
-          this.props.pane.current,
-          "about") ?
-          <AboutPane/> : null }
-        { this.paneMatch(
-          this.props.pane.current,
-          "landing",
-          "about",
-          "projects") ?
-          <LandingPane/> : null }
-        { this.paneMatch(this.props.pane.current,
-          "projects") ?
-          <ProjectsPane/> : null }
-      </Fragment>
+          { this.paneMatch(
+            this.props.pane.current,
+            "about") ?
+            <AboutPane/> : null }
+          { this.paneMatch(
+            this.props.pane.current,
+            "landing",
+            "about",
+            "projects") ?
+            <LandingPane/> : null }
+          { this.paneMatch(this.props.pane.current,
+            "projects") ?
+            <ProjectsPane/> : null }
+        </Fragment>
       )
     }
     return (
