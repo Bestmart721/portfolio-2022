@@ -9,7 +9,15 @@ class ProjectsPane extends Component {
     console.log("ProjectsPane mounted");
   }
 
-  static get DISPLAY_STRING() { return "PROJECTS."; }
+  static get DISPLAY_STRING() { return "MYWORK"; }
+  static get TAGLINES() { return [
+    "This Website > Express React Redux",
+    "Bandcamp Scraping > Rust",
+    "Minecraft Modding > Java FabricAPI",
+    "Tweet Cartography > Python",
+    "Game Jams > Godot",
+    "Spotify Playlist Art > GIMP"
+  ] }
 
   render() {
     return (
@@ -21,7 +29,11 @@ class ProjectsPane extends Component {
         <div className="projectbox">
           {this.constructor.DISPLAY_STRING.split('').map(
             (letter, i) =>
-                (<ProjectSlide key={i} letter={letter} />)
+                (<ProjectSlide key={i}
+                  letter={letter}
+                  imgClass={"bg-img-project" + i}
+                  title={this.constructor.TAGLINES[i]}
+                  />)
           ) || null}
         </div>
       </div>

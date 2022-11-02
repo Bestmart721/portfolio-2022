@@ -1,19 +1,158 @@
 @use "../palette" as *;
 
+.bg-img-project0 {
+    background-image:
+        url("../../assets/project0.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project0.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
+.bg-img-project1 {
+    background-image:
+        url("../../assets/project1.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project1.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
+.bg-img-project2 {
+    background-image:
+        url("../../assets/project2.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project2.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
+.bg-img-project3 {
+    background-image:
+        url("../../assets/project3.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project3.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
+.bg-img-project4 {
+    background-image:
+        url("../../assets/project4.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project4.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
+.bg-img-project5 {
+    background-image:
+        url("../../assets/project5.jpg"),
+        linear-gradient(to bottom,
+                        transparentize($dark, 0) 0%,
+                        transparentize($dark, 0.15) 20%,
+                        transparentize($dark, 0.15) 80%,
+                        transparentize($dark, 0) 100%);
+    &:hover {
+        background-image:
+            url("../../assets/project5.jpg"),
+            linear-gradient(transparentize($dark, 0.6), transparentize($dark, 1));
+    }
+}
+
 .projectbox {
-    transform: translateY(calc(50vh - 50%));
+    transform: translateY(calc(30vh - 50%));
     display: flex;
     flex-direction: row;
     width: 84vw;
-    height: 70vh;
+    height: 50vh;
     & > .projectSlide {
         display: flex;
-        border: 1px solid $motif-color-dark;
+        border: 1px solid darken($motif-color-saturated, 7%);
         margin: 5px;
+        transition: 0.35s;
+        background-blend-mode: darken;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0px 0px 0px transparent;
+        @keyframes textLight {
+            0% {
+                color: lighten($motif-color-saturated, 30%);
+            }
+            100% {
+                color: lighten($motif-color-saturated, 10%);
+            }
+        }
+        & > .project-title {
+            position: absolute;
+            color: transparent;
+            white-space: nowrap;
+            font-size: 2.2vh;
+            transform: scaleY(85%);
+        }
+        & > .project-title-top {
+            top: -2em;
+        }
+        & > .project-title-bottom {
+            top: calc(50vh - 1em);
+        }
+        &:hover {
+            border: 1px solid $motif-color-saturated;
+            box-shadow: 0px 0px 100px transparentize($motif-color-saturated, 0.7);
+            flex-grow: 2;
+            & > h1 {
+                text-shadow: 0px 0px transparent;
+                color: transparent;
+                mix-blend-mode: normal;
+            }
+            & > .project-title {
+                animation-name: textLight;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-out;
+            }
+        }
         & > h1 {
-            color: $motif-color-dark;
+            color: saturate(darken($motif-color-saturated, 5%), 40%);
+            text-shadow: 0px 0.2px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 0.4px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 0.6px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 0.8px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 1.0px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 1.2px saturate(darken($motif-color-saturated, 10%), 10%),
+                         0px 1.4px saturate(darken($motif-color-saturated, 10%), 10%);
             font-size: 2vh;
-            transform: scale(800%, 4150%);
+            transform: scale(1200%, 600%);
             margin: auto;
         }
         flex-grow: 1;
