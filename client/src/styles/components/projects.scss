@@ -1,0 +1,22 @@
+@use "../palette" as *;
+
+.projectbox {
+    transform: translateY(calc(50vh - 50%));
+    display: flex;
+    flex-direction: row;
+    width: 84vw;
+    height: 70vh;
+    & > .projectSlide {
+        display: flex;
+        border: 1px solid $motif-color-dark;
+        margin: 5px;
+        & > h1 {
+            color: $motif-color-dark;
+            font-size: 2vh;
+            transform: scale(800%, 4150%);
+            margin: auto;
+        }
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+}
