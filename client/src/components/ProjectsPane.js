@@ -31,7 +31,8 @@ class ProjectsPane extends Component {
             (letter, i) =>
                 (<ProjectSlide key={i}
                   letter={letter}
-                  imgClass={"bg-img-project" + i}
+                  imgClass={"project-img project-img-" + i}
+                  letterClass={"project-letter-" + i}
                   title={this.constructor.TAGLINES[i]}
                   />)
           ) || null}
