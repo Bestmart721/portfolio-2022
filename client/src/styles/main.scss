@@ -12,6 +12,15 @@ body {
     font-family: monospace;
 }
 
+.playing {
+    animation-play-state: running;
+}
+
+.paused {
+    display: none;
+    animation-play-state: paused;
+}
+
 @keyframes shake {
     @for $i from 0 through 10 {
         $percent: 0% + 10 * $i;

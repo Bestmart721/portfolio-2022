@@ -43,8 +43,8 @@
     & > .about-bg {
         animation-name: dropIn;
         animation-fill-mode: both;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
+        animation-duration: 3s;
+        animation-timing-function: cubic-bezier(0, 1, 0, 1);
         position: absolute;
         left: 55vw;
         top: 10vh;
@@ -84,8 +84,8 @@
 
             animation-name: slideIn;
             animation-fill-mode: both;
-            animation-duration: 1s;
-            animation-timing-function: ease-out;
+            animation-duration: 3s;
+            animation-timing-function: cubic-bezier(0, 1, 0, 1);
         }
     }
 
@@ -105,8 +105,8 @@
         }
         animation-name: slideRight;
         animation-fill-mode: backwards;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
+        animation-duration: 3s;
+        animation-timing-function: cubic-bezier(0, 1, 0, 1);
         width: 45em;
         @keyframes slideUp {
             0% {

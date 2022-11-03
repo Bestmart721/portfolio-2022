@@ -11,7 +11,20 @@
     opacity: 0.7;
 }
 
+@keyframes projectboxIn {
+    0% {
+        transform: translateY(-30vh);
+    }
+    100% {
+        transform: translateY(calc(30vh - 50%));
+    }
+}
+
+
 .projectbox {
+    animation-name: projectboxIn;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0, 1, 0, 1);
     transform: translateY(calc(30vh - 50%));
     display: flex;
     flex-direction: row;
@@ -21,7 +34,7 @@
         display: flex;
         border: 1px inset darken($motif-color-saturated, 7%);
         margin: 5px;
-        transition: 0.35s;
+        transition: 0.15s;
         padding: 0px;
         box-shadow: 0px 0px 0px transparent;
         background-color: $dark;
@@ -70,11 +83,24 @@
             animation-fill-mode: forwards;
             mix-blend-mode: exclusion;
         }
+        &:hover {
+            transition: 0.35s;
+            flex-grow: 1.1;
+            & > .project-title {
+                animation-name: textLight;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-out;
+            }
+        }
+        &:focus {
+            transition: 0.15s;
+            flex-grow: 2.5;
+        }
         &:hover, &:focus {
             animation-name: none;
             border: 1px solid $motif-color-saturated;
             box-shadow: 0px 0px 100px transparentize($motif-color-saturated, 0.7);
-            flex-grow: 2;
             @keyframes imgOverEffect {
                 0% {
                     opacity: 1;
@@ -105,12 +131,10 @@
                     }
                 }
             }
-            & > .project-title {
-                animation-name: textLight;
-                animation-duration: 2s;
-                animation-fill-mode: forwards;
-                animation-timing-function: ease-out;
-            }
+        }
+        &:active {
+            border: 1px solid lighten($motif-color-saturated, 30%);
+            flex-grow: 2.7;
         }
         & > h1 {
             font-size: 2vh;

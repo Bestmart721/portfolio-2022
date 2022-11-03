@@ -11,7 +11,6 @@ class ProjectSlide extends Component {
         <div className={this.props.imgClass}/>
         <div className="project-img-over"/>
         <h1 className={this.props.letterClass + " noselect"}>{this.props.letter}</h1>
-        <p className="project-title project-title-top">{this.props.title}</p>
         <p className="project-title project-title-bottom">{this.props.title}</p>
       </Link>
     )

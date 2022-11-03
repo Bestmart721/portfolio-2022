@@ -34,9 +34,17 @@ class ProjectsPane extends Component {
           this.props.setPane('landing') }>
           {"<"} back
         </Link>
-        <div className="projectbox-drape">
+        <div className={
+          "projectbox-drape" +
+          (this.props.pane.current === "projects" || this.props.pane.moving ?
+           " playing" : " paused")
+        }>
         </div>
-        <div className="projectbox">
+        <div className={
+          "projectbox" +
+          (this.props.pane.current === "projects" || this.props.pane.moving ?
+           " playing" : " paused")
+        }>
           {this.constructor.DISPLAY_STRING.split('').map(
             (letter, i) =>
                 (<ProjectSlide key={i}
