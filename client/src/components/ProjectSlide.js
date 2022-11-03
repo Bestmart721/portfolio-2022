@@ -6,15 +6,22 @@ import * as actions from "../actions";
 class ProjectSlide extends Component {
   render() {
     return (
-      <div className="projectSlide">
+      <Link className="projectSlide"
+            to={this.props.endpoint}>
         <div className={this.props.imgClass}/>
         <div className="project-img-over"/>
         <h1 className={this.props.letterClass + " noselect"}>{this.props.letter}</h1>
         <p className="project-title project-title-top">{this.props.title}</p>
         <p className="project-title project-title-bottom">{this.props.title}</p>
-      </div>
+      </Link>
     )
   }
 }
 
-export default connect()(ProjectSlide);
+function mapStateToProps(state) {
+  return {
+    pane: state.pane
+  };
+}
+
+export default connect(mapStateToProps)(ProjectSlide);

@@ -16,7 +16,15 @@ class ProjectsPane extends Component {
     "Minecraft Modding > Java FabricAPI",
     "Tweet Cartography > Python",
     "Game Jams > Godot",
-    "Spotify Playlist Art > GIMP"
+    "Spotify Thumbnails > GIMP"
+  ] }
+  static get ENDPOINTS() { return [
+    "/this-website",
+    "/bandcamp-free",
+    "/minecraft-modding",
+    "/tweet-cartography",
+    "/game-jams",
+    "/spotify-thumbnails"
   ] }
 
   render() {
@@ -26,6 +34,8 @@ class ProjectsPane extends Component {
           this.props.setPane('landing') }>
           {"<"} back
         </Link>
+        <div className="projectbox-drape">
+        </div>
         <div className="projectbox">
           {this.constructor.DISPLAY_STRING.split('').map(
             (letter, i) =>
@@ -34,6 +44,7 @@ class ProjectsPane extends Component {
                   imgClass={"project-img project-img-" + i}
                   letterClass={"project-letter-" + i}
                   title={this.constructor.TAGLINES[i]}
+                  endpoint={"/projects" + this.constructor.ENDPOINTS[i]}
                   />)
           ) || null}
         </div>
