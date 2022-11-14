@@ -6,7 +6,7 @@ import ProjectSlide from './ProjectSlide';
 
 class ProjectsPane extends Component {
   componentDidMount() {
-    console.log("ProjectsPane mounted");
+    this.hoverTarget = -1;
   }
 
   static get DISPLAY_STRING() { return "MYWORK"; }
@@ -27,6 +27,10 @@ class ProjectsPane extends Component {
     "/spotify-thumbnails"
   ] }
 
+  setHoverTarget() {
+      console.log(-1);
+  }
+
   render() {
     return (
       <div className="pane projects-pane">
@@ -39,6 +43,9 @@ class ProjectsPane extends Component {
           (this.props.pane.current === "projects" || this.props.pane.moving ?
            " playing" : " paused")
         }>
+          <div className="drape-square-0"/>
+          <div className="drape-square-1"/>
+          <div className="drape-square-2"/>
         </div>
         <div className={
           "projectbox" +
@@ -52,6 +59,7 @@ class ProjectsPane extends Component {
                   imgClass={"project-img project-img-" + i}
                   letterClass={"project-letter-" + i}
                   title={this.constructor.TAGLINES[i]}
+                  onMouseOver={() => console.log("mouse enter")}
                   endpoint={"/projects" + this.constructor.ENDPOINTS[i]}
                   />)
           ) || null}

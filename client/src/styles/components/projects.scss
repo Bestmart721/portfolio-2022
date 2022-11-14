@@ -7,8 +7,48 @@
     right: auto;
     width: 83vw;
     height: 180vh;
-    top: 6vh;
+    top: 50vh;
     opacity: 0.7;
+
+    @keyframes rotate {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        50% {
+            transform: rotateZ(180deg);
+        }
+        100% {
+            transform: rotateZ(360deg);
+        }
+    }
+    & .drape-square-0 {
+        width: 10vh;
+        height: 10vh;
+        animation-duration: 7s;
+        top: 12vh;
+        left: 40vw;
+    }
+    & .drape-square-1 {
+        width: 15vh;
+        height: 15vh;
+        animation-duration: 6s;
+        top: 7vh;
+        left: 37vw;
+    }
+    & .drape-square-2 {
+        width: 20vh;
+        height: 20vh;
+        animation-duration: 8s;
+        top: -1vh;
+        left: 35vw;
+    }
+    & .drape-square-0, .drape-square-1, .drape-square-2 {
+        position: absolute;
+        border: 1px inset darken($motif-color-saturated, 7%);
+        animation-name: rotate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 }
 
 @keyframes projectboxIn {
@@ -113,6 +153,7 @@
                 animation-name: imgOverEffect;
                 animation-duration: 0.6s;
                 animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
             }
             @for $i from 0 through 5 {
                 .project-img-#{$i} {

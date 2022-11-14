@@ -8,7 +8,6 @@ import * as actions from "../actions";
 
 class LandingPane extends Component {
   componentDidMount() {
-    console.log("LandingPane mounted");
     this.props.fetchComments();
   }
 

@@ -10,6 +10,21 @@ body {
     height: auto;
     overflow-x: hidden;
     font-family: monospace;
+    scroll-behavior: smooth;
+}
+
+.mask {
+    position: absolute;
+    width: 300vw;
+    height: calc(var(--page-height) * 1vh);
+    left: -100vw;
+    top: 0vh;
+    z-index: 900;
+    mix-blend-mode: multiply;
+    opacity: 0.15;
+    background-image: url("../assets/textures/prewitt.png");
+    background-repeat: repeat;
+    pointer-events: none;
 }
 
 .playing {

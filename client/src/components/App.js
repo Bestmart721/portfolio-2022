@@ -1,4 +1,4 @@
-import { React, Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 //import { BrowserRouter, Route } from 'react-router-dom';
 import {
   BrowserRouter,
@@ -12,14 +12,34 @@ import Header from './Header';
 import LandingPane from './LandingPane';
 import AboutPane from './AboutPane';
 import ProjectsPane from './ProjectsPane';
+import ReactDOM from 'react-dom';
 
-class App extends Component {
-  componentDidMount() {
+const App = (props) => {
+  function componentDidMount() {
     // Send an AJAX request with axios (our fetchUser action) on load
-    this.props.fetchUser();
+    props.fetchUser();
   }
 
-  paneMatch(pane) {
+  document.body.style.setProperty('--page-height', window.innerHeight);
+
+  function handleScrollUpdate(event) {
+    document.body.style.setProperty(
+      '--scroll',
+      window.pageYOffset / (
+          document.body.offsetHeight - window.innerHeight
+      )
+    );
+  };
+
+  React.useEffect(() => {
+      window.addEventListener('scroll', handleScrollUpdate);
+      // Return "cleanup" function
+      return () => {
+        window.removeEventListener('scroll', handleScrollUpdate);
+      };
+    }, []);
+
+  function paneMatch(pane) {
     for (let i = 1; i < arguments.length; ++i) {
       if (arguments[i] === pane) {
         return true;
@@ -28,65 +48,65 @@ class App extends Component {
     return false;
   }
 
-  buildPanes() {
-    if( this.pane && !this.pane.moving ) {
+  function buildPanes() {
+    if( props.pane && !props.pane.moving ) {
       return (
         <Fragment>
-          { this.paneMatch(
-            this.props.pane.current,
+          { paneMatch(
+            props.pane.current,
             "about") ?
             <AboutPane/> : null }
-          { this.paneMatch(
-            this.props.pane.current,
+          { paneMatch(
+            props.pane.current,
             "landing",
             "about",
             "projects") ?
             <LandingPane/> : null }
-          { this.paneMatch(this.props.pane.current,
+          { paneMatch(props.pane.current,
             "projects") ?
             <ProjectsPane/> : null }
         </Fragment>
       )
     }
+
     return (
       <Fragment>
-        { this.paneMatch(
-          this.props.pane.current,
+        { paneMatch(
+          props.pane.current,
           "landing",
           "about") ?
           <AboutPane/> : null }
-        { this.paneMatch(
-          this.props.pane.current,
+        { paneMatch(
+          props.pane.current,
           "landing",
           "about",
           "projects") ?
           <LandingPane/> : null }
-        { this.paneMatch(this.props.pane.current, "landing", "projects") ?
+        { paneMatch(props.pane.current, "landing", "projects") ?
           <ProjectsPane/> : null }
       </Fragment>
     );
   }
 
-  generateClassName() {
-    return (this.props.pane.previous !== this.props.pane.current ?
-      "container from-" +
-      this.props.pane.previous +
+  function generateClassName() {
+    return (props.pane.previous !== props.pane.current ?
+      " from-" +
+      props.pane.previous +
       " to-" +
-      this.props.pane.current :
-      "container");
+      props.pane.current :
+      null);
   }
 
-  render() {
-    return (
-      <BrowserRouter>
-        <div className={ this.generateClassName() }>
-          <Route path="/" render={ () =>
-            this.buildPanes()
-          } />
-        </div>
-      </BrowserRouter>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <div className={ "container" + generateClassName() }>
+        <Route path="/" render={ () =>
+          buildPanes()
+        } />
+      </div>
+      <div className={ "mask" + generateClassName() }/>
+    </BrowserRouter>
+  );
 };
 
 function mapStateToProps(state) {

@@ -16,68 +16,66 @@
 
 @keyframes moveMiddleToRight {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0vw);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-100vw);
     }
 }
 
 @keyframes moveMiddleToLeft {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0vw);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(100vw);
     }
 }
 
 @keyframes moveRightToMiddle {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-100vw);
     }
     100% {
-        transform: translateX(0%);
+        transform: translateX(0vw);
     }
 }
 
 @keyframes moveLeftToMiddle {
     0% {
-        transform: translateX(100%);
+        transform: translateX(100vw);
     }
     100% {
-        transform: translateX(0%);
+        transform: translateX(0vw);
     }
 }
 
 .to-about {
     animation-name: moveMiddleToLeft;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-direction: forwards;
-    animation-fill-mode: forwards;
 }
 
 .from-about {
     animation-name: moveLeftToMiddle;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-direction: forwards;
-    animation-fill-mode: forwards;
 }
 
 .to-projects {
     animation-name: moveMiddleToRight;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-direction: forwards;
-    animation-fill-mode: forwards;
 }
 
 .from-projects {
     animation-name: moveRightToMiddle;
-    animation-duration: 0.6s;
+}
+
+.container {
     animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-duration: 0.6s;
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+}
+
+.mask {
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-duration: 0.6s;
     animation-direction: forwards;
     animation-fill-mode: forwards;
 }
