@@ -26,21 +26,21 @@
         height: 10vh;
         animation-duration: 7s;
         top: 12vh;
-        left: 40vw;
+        left: calc((var(--project-focus) - 2.5) * 2vw + 35vw);
     }
     & .drape-square-1 {
         width: 15vh;
         height: 15vh;
         animation-duration: 6s;
         top: 7vh;
-        left: 37vw;
+        left: calc((var(--project-focus) - 2.5) * 4vw + 35vw);
     }
     & .drape-square-2 {
         width: 20vh;
         height: 20vh;
         animation-duration: 8s;
         top: -1vh;
-        left: 35vw;
+        left: calc((var(--project-focus) - 2.5) * 6vw + 35vw);
     }
     & .drape-square-0, .drape-square-1, .drape-square-2 {
         position: absolute;

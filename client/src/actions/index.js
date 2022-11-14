@@ -4,7 +4,8 @@ import {
   FETCH_COMMENTS,
   POST_COMMENT,
   SET_PANE,
-  END_PANE_MOVE
+  END_PANE_MOVE,
+  SET_PROJECT_FOCUS
 } from './types';
 
 export const fetchUser = () => {
@@ -63,3 +64,14 @@ export const setPane = (pane) => {
     ), 600);
   };
 };
+
+export const setProjectFocus = (index) => {
+  return async function(dispatch) {
+    dispatch(
+      {
+        type: SET_PROJECT_FOCUS,
+        payload: index
+      }
+    );
+  }
+}

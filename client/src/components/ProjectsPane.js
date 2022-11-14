@@ -39,10 +39,12 @@ class ProjectsPane extends Component {
           {"<"} back
         </Link>
         <div className={
-          "projectbox-drape" +
+          "projectbox-drape " +
           (this.props.pane.current === "projects" || this.props.pane.moving ?
            " playing" : " paused")
-        }>
+        } style={{
+          '--project-focus': (this.props.focus === -1 ? 2.5 : this.props.focus)
+        } } >
           <div className="drape-square-0"/>
           <div className="drape-square-1"/>
           <div className="drape-square-2"/>
@@ -56,10 +58,10 @@ class ProjectsPane extends Component {
             (letter, i) =>
                 (<ProjectSlide key={i}
                   letter={letter}
+                  index={i}
                   imgClass={"project-img project-img-" + i}
                   letterClass={"project-letter-" + i}
                   title={this.constructor.TAGLINES[i]}
-                  onMouseOver={() => console.log("mouse enter")}
                   endpoint={"/projects" + this.constructor.ENDPOINTS[i]}
                   />)
           ) || null}
@@ -71,7 +73,8 @@ class ProjectsPane extends Component {
 
 function mapStateToProps(state) {
   return {
-    pane: state.pane
+    pane: state.pane,
+    focus: state.project_focus.index
   };
 }
 
