@@ -25,6 +25,9 @@
         width: 10vh;
         height: 10vh;
         animation-duration: 7s;
+        transition-duration: 2s;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        transition-property: left;
         top: 12vh;
         left: calc((var(--project-focus) - 2.5) * 2vw + 35vw);
     }
@@ -33,6 +36,9 @@
         height: 15vh;
         animation-duration: 6s;
         top: 7vh;
+        transition-duration: 2s;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        transition-property: left;
         left: calc((var(--project-focus) - 2.5) * 4vw + 35vw);
     }
     & .drape-square-2 {
@@ -40,6 +46,9 @@
         height: 20vh;
         animation-duration: 8s;
         top: -1vh;
+        transition-duration: 2s;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        transition-property: left;
         left: calc((var(--project-focus) - 2.5) * 6vw + 35vw);
     }
     & .drape-square-0, .drape-square-1, .drape-square-2 {
