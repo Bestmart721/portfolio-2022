@@ -11,7 +11,6 @@ class AboutPane extends Component {
   }
 
   render() {
-    console.log(this.props.pane);
     return (
       <div className={
         "pane about-pane" +

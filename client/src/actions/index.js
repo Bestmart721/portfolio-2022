@@ -65,12 +65,12 @@ export const setPane = (pane) => {
   };
 };
 
-export const setProjectFocus = (index) => {
+export const setProjectFocus = (focusState) => {
   return async function(dispatch) {
     dispatch(
       {
         type: SET_PROJECT_FOCUS,
-        payload: index
+        payload: focusState
       }
     );
   }

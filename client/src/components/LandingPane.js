@@ -42,25 +42,25 @@ class LandingPane extends Component {
   renderContent() {
     return (
       <div className="pane landing-pane">
+        <div className="fadein">
+          <Header />
+          <Link className="nav-left" to="/about" onClick={ () =>
+            this.props.setPane('about') }>
+            {"<"} about
+          </Link>
+          <Link className="nav-right" to="/projects" onClick={ () =>
+            this.props.setPane('projects') }>
+            projects {">"}
+          </Link>
+        </div>
         <div className="landing-box">
-          <div className="fadein">
-            <Header />
-            <Link className="nav-left" to="/about" onClick={ () =>
-              this.props.setPane('about') }>
-              {"<"} about
-            </Link>
-            <Link className="nav-right" to="/projects" onClick={ () =>
-              this.props.setPane('projects') }>
-              projects {">"}
-            </Link>
-          </div>
-            <div className="bg-hero noselect">
-              <h1>QUAKER</h1>
-              <h1>QUAKER</h1>
-              <h1>QUAKER</h1>
-              <h1>QUAKER</h1>
-              <h1>QUAKER</h1>
-              <h1>QUAKER</h1>
+          <div className="bg-hero noselect">
+            <h1>QUAKER</h1>
+            <h1>QUAKER</h1>
+            <h1>QUAKER</h1>
+            <h1>QUAKER</h1>
+            <h1>QUAKER</h1>
+            <h1>QUAKER</h1>
           </div>
           <div className="hero noselect">
             <h1 className="hero-piece-1">S</h1>

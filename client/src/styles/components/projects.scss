@@ -1,6 +1,13 @@
 @use "../palette" as *;
 @use "../fonts" as *;
 
+.project-learnmore {
+    color: $motif-color-saturated;
+    position: absolute;
+    left: auto;
+    top: 75vh;
+}
+
 .projectbox-drape {
     position: absolute;
     left: auto;

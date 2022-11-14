@@ -13,11 +13,19 @@ const ProjectSlide = props => {
           to={props.endpoint}
           onMouseOver={ async () => dispatch({
             type: SET_PROJECT_FOCUS,
-            payload: props.index
+            payload: {index: props.index, lock: null}
           }) }
           onMouseLeave={ async () => dispatch({
             type: SET_PROJECT_FOCUS,
-            payload: -1
+            payload: {index: -1, lock: null}
+          }) }
+          onFocus={ async () => dispatch({
+            type: SET_PROJECT_FOCUS,
+            payload: {index: props.index, lock: true}
+          }) }
+          onBlur={ async () => dispatch({
+            type: SET_PROJECT_FOCUS,
+            payload: {index: -1, lock: false}
           }) }>
       <div className={props.imgClass}/>
       <div className="project-img-over"/>

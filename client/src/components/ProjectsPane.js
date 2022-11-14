@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import * as actions from "../actions";
 import ProjectSlide from './ProjectSlide';
@@ -43,7 +44,8 @@ class ProjectsPane extends Component {
           (this.props.pane.current === "projects" || this.props.pane.moving ?
            " playing" : " paused")
         } style={{
-          '--project-focus': (this.props.focus === -1 ? 2.5 : this.props.focus)
+          '--project-focus': (this.props.focus.index === -1 ?
+            2.5 : this.props.focus.index)
         } } >
           <div className="drape-square-0"/>
           <div className="drape-square-1"/>
@@ -66,6 +68,15 @@ class ProjectsPane extends Component {
                   />)
           ) || null}
         </div>
+        {this.props.focus.index !== -1 && !this.props.focus.lock ?
+          (<p className="project-learnmore">click to learn more</p>
+          ) :
+          null}
+        <BrowserRouter>
+          <Route path="/projects" render={ () =>
+            (<p>HELLO HELLO HELLO!!!!!!!!!!!!!!</p>)
+          } />
+        </BrowserRouter>
       </div>
     );
   }
@@ -74,7 +85,7 @@ class ProjectsPane extends Component {
 function mapStateToProps(state) {
   return {
     pane: state.pane,
-    focus: state.project_focus.index
+    focus: state.project_focus
   };
 }
 
