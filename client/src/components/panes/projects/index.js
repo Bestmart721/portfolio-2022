@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import * as actions from "../actions";
+import * as actions from "../../../actions";
 import ProjectSlide from './ProjectSlide';
 
 class ProjectsPane extends Component {
@@ -51,6 +51,10 @@ class ProjectsPane extends Component {
           <div className="drape-square-1"/>
           <div className="drape-square-2"/>
         </div>
+        <h1 className={
+          "project-bg noselect" +
+          (this.props.pane.current === "projects" || this.props.pane.moving ?
+           " playing" : " paused")}>AND</h1>
         <div className={
           "projectbox" +
           (this.props.pane.current === "projects" || this.props.pane.moving ?

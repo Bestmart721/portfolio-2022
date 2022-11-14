@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as actions from "../actions";
-import { SET_PROJECT_FOCUS } from "../actions/types";
+import * as actions from "../../../actions";
+import { SET_PROJECT_FOCUS } from "../../../actions/types";
 
 const ProjectSlide = props => {
 

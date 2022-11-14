@@ -4,11 +4,12 @@ import Header from './Header';
 import CommentList from './CommentList';
 import CommentBox from './CommentBox';
 import { Link } from 'react-router-dom';
-import * as actions from "../actions";
+import * as actions from "../../../actions";
 
 class LandingPane extends Component {
   componentDidMount() {
     this.props.fetchComments();
+    console.log(this.props);
   }
 
   renderComments() {

@@ -8,10 +8,9 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from "../actions";
-import Header from './Header';
-import LandingPane from './LandingPane';
-import AboutPane from './AboutPane';
-import ProjectsPane from './ProjectsPane';
+import LandingPane from './panes/landing';
+import AboutPane from './panes/about';
+import ProjectsPane from './panes/projects';
 import ReactDOM from 'react-dom';
 
 const App = (props) => {
@@ -54,7 +53,7 @@ const App = (props) => {
         <Fragment>
           { paneMatch(
             props.pane.current,
-            "about") ?
+            "about", "landing") ?
             <AboutPane/> : null }
           { paneMatch(
             props.pane.current,
@@ -63,7 +62,7 @@ const App = (props) => {
             "projects") ?
             <LandingPane/> : null }
           { paneMatch(props.pane.current,
-            "projects") ?
+            "projects", "landing") ?
             <ProjectsPane/> : null }
         </Fragment>
       )

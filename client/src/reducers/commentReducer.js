@@ -6,8 +6,6 @@ export default function(state = null, action) {
     case FETCH_COMMENTS:
       return action.payload;
     case POST_COMMENT:
-      console.log("POST_COMMENT");
-      console.log(action.payload);
       return action.payload;
     default:
       return state;

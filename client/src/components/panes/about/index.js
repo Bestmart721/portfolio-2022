@@ -1,8 +1,8 @@
 import React, { Component, Fragment, Image } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from "../actions";
-import AboutImage from '../assets/about.jpg';
+import * as actions from "../../../actions";
+import AboutImage from '../../../assets/about.jpg';
 
 class AboutPane extends Component {
   justMovedIn() {
