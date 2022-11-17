@@ -12,7 +12,7 @@ class LandingPane extends Component {
     this.props.fetchComments();
   }
 
-  renderComments() { 
+  renderComments() {
     switch (this.props.auth) {
       case null:
         // AJAX for log in is still hanging...
@@ -24,6 +24,11 @@ class LandingPane extends Component {
         // AJAX says we have no current user session
         return (
           <div className="fadein comments">
+            <div className="testimonials-header">
+              <h2>TESTIMONIAL:</h2>
+              <p>noun. A written affirmation of another's character or worth</p>
+              <p className="indent-6">A personal recommendation</p>
+            </div>
             <CommentList />
             <div className="comment-prompt">
               <a href="/auth/google">Log in</a>
@@ -36,6 +41,7 @@ class LandingPane extends Component {
         return (
           <div className="fadein comments">
             <CommentBox />
+            <h3 className="testimonials-header-small">TESTIMONIALS</h3>
             <CommentList />
           </div>
         );
