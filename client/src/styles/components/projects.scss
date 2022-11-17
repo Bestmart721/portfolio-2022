@@ -1,5 +1,5 @@
-@use "../palette" as *;
-@use "../fonts" as *;
+@import "../palette";
+@import "../fonts";
 
 .projects-pane {
     transform: translateX(100%);
