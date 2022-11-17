@@ -1,6 +1,6 @@
-@import "palette";
-@import "components/all";
-@import "fonts";
+@use "palette" as *;
+@use "components/all";
+@use "fonts" as *;
 
 body {
     margin: 0;
