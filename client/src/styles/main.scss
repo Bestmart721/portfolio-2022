@@ -6,8 +6,6 @@ body {
     margin: 0;
     background-color: $dark;
     color: $off-white;
-    width: 100%;
-    height: auto;
     overflow-x: hidden;
     font-family: monospace;
     scroll-behavior: smooth;
@@ -16,7 +14,7 @@ body {
 .mask {
     position: absolute;
     width: 300vw;
-    height: calc(var(--page-height) * 1vh);
+    height: calc(var(--page-height) * 2.89px);
     left: -100vw;
     top: 0vh;
     z-index: 900;
@@ -67,6 +65,12 @@ a:active {
 
 h1 {
     font-family: $Staatliches, Arial, sans-serif;
+}
+
+@for $i from 1 through 10 {
+    .indent-#{$i} {
+        margin-left: calc(0.55em * $i);
+    }
 }
 
 .small-line {

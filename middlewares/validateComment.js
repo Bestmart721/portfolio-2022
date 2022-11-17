@@ -7,14 +7,15 @@
 const CONTAINS_INVALID_CHARS = new RegExp('[<>{}\'\"]', 'g');
 
 function stringIsInvalid(input) {
-  return !input ||
+  return input !== null &&
+         (!input ||
          typeof input !== 'string' ||
-         CONTAINS_INVALID_CHARS.test(input);
+         CONTAINS_INVALID_CHARS.test(input));
 }
 
 module.exports = (req, res, next) => {
   if(!req.body ||
-     stringIsInvalid(req.body.title) ||
+     stringIsInvalid(req.body.title ? req.body.title : null) ||
      stringIsInvalid(req.body.content)
    ) {
     return res.status(400).send({ error: 'Malformed comment'});

@@ -14,20 +14,20 @@ import ProjectsPane from './panes/projects';
 import ReactDOM from 'react-dom';
 
 const App = (props) => {
-  function componentDidMount() {
-    // Send an AJAX request with axios (our fetchUser action) on load
-    props.fetchUser();
-  }
 
+  props.fetchUser();
   document.body.style.setProperty('--page-height', window.innerHeight);
+  document.body.style.setProperty('--scroll', 0);
 
   function handleScrollUpdate(event) {
-    document.body.style.setProperty(
-      '--scroll',
-      window.pageYOffset / (
-          document.body.offsetHeight - window.innerHeight
-      )
-    );
+    const amount = window.pageYOffset / (document.body.offsetHeight -
+      window.innerHeight);
+    if(amount !== NaN && amount !== Infinity) {
+      document.body.style.setProperty(
+        '--scroll',
+        amount
+      );
+    };
   };
 
   React.useEffect(() => {
@@ -93,7 +93,8 @@ const App = (props) => {
       props.pane.previous +
       " to-" +
       props.pane.current :
-      null);
+      null
+    );
   }
 
   return (

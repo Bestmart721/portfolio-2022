@@ -9,6 +9,7 @@
     height: 170vh;
     left: -20vw;
     margin: 0px;
+    top: calc(var(--scroll) * -30vh);
     z-index: -10;
     opacity: 0.7;
     & > h1 {

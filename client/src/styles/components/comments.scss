@@ -9,8 +9,13 @@
 }
 
 .testimonials-header {
+    & > p {
+        color: darken($off-white, 10%);
+    }
     margin-top: 8em;
-    margin-bottom: 2em;
+    margin-bottom: 8em;
+    padding: 30px;
+    border: 1px solid $motif-color-dark;
 }
 
 .comments-stagger {
@@ -44,7 +49,7 @@
 }
 
 .comment-prompt {
-    color: $light;
+    color: darken($off-white, 10%);
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -127,7 +132,7 @@
         & > input {
             color: darken($off-gray, 10%);
             &:focus {
-                color: lighten($off-gray, 10%);
+                color: lighten($off-gray, 30%);
                 background-color: desaturate(darken($motif-color-dark, 5%), 40%);
             }
             width: 75%;
@@ -139,8 +144,8 @@
         & > textarea {
             color: darken($off-gray, 10%);
             &:focus {
-                color: lighten($off-gray, 10%);
-                background-color: desaturate(darken($motif-color-dark, 5%), 40%);
+                color: lighten($off-gray, 30%);
+                background-color: desaturate(darken($motif-color-dark, 8%), 20%);
             }
             resize: vertical;
             min-height: 30vh;
@@ -163,7 +168,7 @@
             background-color: $motif-color-saturated;
             color: $dark;
             animation: shake;
-            animation-duration: 0.1s;
+            animation-duration: 0.2s;
             animation-fill-mode: none;
             animation-iteration-count: infinite;
         }

@@ -5,7 +5,6 @@ import * as actions from "../../../actions";
 
 class CommentBox extends Component {
   componentDidMount() {
-    console.log(this.props);
   }
 
   render() {
@@ -49,12 +48,12 @@ class CommentBox extends Component {
     );
   }
 }
-//                       { auth } <- Grabs the auth field of state
+
 function mapStateToProps(state) {
   return {
     auth: state.auth,
     comments: state.comments
-  }; // Equilalent to { auth : auth }
+  };
 }
 
 export default connect(mapStateToProps, actions)(CommentBox);

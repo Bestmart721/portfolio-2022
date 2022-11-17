@@ -5,34 +5,36 @@ import CommentList from './CommentList';
 import CommentBox from './CommentBox';
 import { Link } from 'react-router-dom';
 import * as actions from "../../../actions";
+import LoadingSwirl from "../../LoadingSwirl"
 
 class LandingPane extends Component {
   componentDidMount() {
     this.props.fetchComments();
-    console.log(this.props);
   }
 
-  renderComments() {
-    if (this.props.pane && this.props.pane.current !== 'landing') return '';
+  renderComments() { 
     switch (this.props.auth) {
       case null:
         // AJAX for log in is still hanging...
-        return '';
+        return (<div className="fadein comments">
+          <p>Loading testimonials...</p>
+          <LoadingSwirl/>
+        </div>);
       case false:
         // AJAX says we have no current user session
         return (
-          <div className="comments">
+          <div className="fadein comments">
             <CommentList />
             <div className="comment-prompt">
               <a href="/auth/google">Log in</a>
-              <p>to comment</p>
+              <p>to leave yours</p>
             </div>
           </div>
         );
       default:
         // AJAX gave us something other than false / null
         return (
-          <div className="comments">
+          <div className="fadein comments">
             <CommentBox />
             <CommentList />
           </div>
@@ -96,9 +98,7 @@ class LandingPane extends Component {
             </div>
           </div>
         </div>
-        <div className="fadein">
-          { this.renderComments() }
-        </div>
+        { this.renderComments() }
       </div>
     )
   }

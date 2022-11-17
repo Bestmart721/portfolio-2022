@@ -4,7 +4,6 @@ import Comment from './Comment';
 
 class CommentList extends Component {
   componentDidMount() {
-    console.log(this.props);
   }
 
   renderComments(match) {
@@ -18,7 +17,11 @@ class CommentList extends Component {
   render() {
     return (
       <Fragment>
-        <h3 className="testimonials-header">See what people have to say:</h3>
+        <div className="testimonials-header">
+          <h2>TESTIMONIAL:</h2>
+          <p>noun. A written affirmation of another's character or worth</p>
+          <p className="indent-6">A personal recommendation</p>
+        </div>
         <div className="comments-stagger">
           <div className="comments-stagger-left">{ this.renderComments(0) }</div>
           <div className="comments-stagger-right">{ this.renderComments(1) }</div>

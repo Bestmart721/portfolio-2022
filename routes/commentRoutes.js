@@ -30,7 +30,7 @@ module.exports = (app) => {
     validateComment,
     async (req, res) => {
       const comment = new Comment({
-        title: req.body.title,
+        title: req.body.title === null ? "" : req.body.title,
         content: req.body.content,
         created: Date.now(),
         updated: Date.now(),
